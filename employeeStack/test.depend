@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1733249322 source:/home/ahmed-ramadan/test/main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"conio.h"
+
+1733233092 /home/ahmed-ramadan/test/conio.h
+	<termios.h>
+	<unistd.h>
+	<stdio.h>
+	<fcntl.h>
+	<stdlib.h>
+	<string.h>
+
