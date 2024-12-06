@@ -70,6 +70,57 @@ public:
     {
         cout << this->real << "+" << this->imge << "i" << endl;
     }
+    complex operator+(complex c)
+    {
+        this->real = this->real + c.real;
+        this->imge = this->imge + c.imge;
+        return *this;
+    }
+    complex operator-(complex c)
+    {
+        this->real = this->real - c.real;
+        this->imge = this->imge - c.imge;
+        return *this;
+    }
+    complex operator++()
+    {
+        this->real = this->real + 1;
+        this->imge = this->imge + 1;
+        return *this;
+    }
+    complex operator++(int x)
+    {
+        complex c;
+        c.real = this->real;
+        c.imge = this->imge;
+        this->real = this->real + 1;
+        this->imge = this->imge + 1;
+        return c;
+    }
+    friend complex operator+(int x,complex c)
+    {
+        c.real += 5;
+        c.imge += 5;
+        return c;
+    }
+    friend complex operator-(int x,complex c)
+    {
+        c.real -= 5;
+        c.imge -= 5;
+        return c;
+    }
+        friend complex operator+(complex c,int x)
+    {
+        c.real += 5;
+        c.imge += 5;
+        return c;
+    }
+    friend complex operator-(complex c,int x)
+    {
+        c.real -= 5;
+        c.imge -= 5;
+        return c;
+    }
 };
 
 int main()
@@ -84,8 +135,17 @@ int main()
 
     complex c3, c4;
     c3 = c2.addComplex(c1);
-    c4 = c2.SubComplex(c1);
+    c3.disComplex();
+    c4 = c3.SubComplex(c1);
+    c4.disComplex();
+    /*
     c3.disComplex();
     c4.disComplex();
+    c3 = c1 + c2;
+    c3.disComplex();
+    c3 = 5 + c3;
+    c3.disComplex();
+    */
+
     return 0;
 }
